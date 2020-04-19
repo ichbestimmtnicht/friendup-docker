@@ -55,7 +55,6 @@ DEST_HUB="index.docker.io"
 # BUILD_ARG_
 BUILD_ARGS=true # Set to false to disable build-arg's
 BUILD_ARG_SRC_HUB="index.docker.io"
-BUILD_ARG_SRC_NAME="${SR_DEST_BUILD_ARCH}" # Corresponding to the current arch in a loop works great when pulling from the docker library
 BUILD_ARG_SRC_REPO="ubuntu"
 BUILD_ARG_SRC_TAG="latest"
 

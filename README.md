@@ -1,9 +1,10 @@
 # FriendUP Docker
+
 [![Build Status](https://tcci.aperture-development.de/app/rest/builds/buildType:(id:FriendUP_Docker)/statusIcon.svg)](https://hub.docker.com/r/aperturedevelopment/friendup) ![Licence](https://img.shields.io/badge/licence-MIT-brightgreen)
 
 This is the repository for the FriendUP docker container. The purpose of this is to allow people to easily deploy FriendUP without complicated setups or anything. We achive that using the Docker Platform, Docker containers are pre-setup and ready-to-deploy application containers.
 
-# How to Deploy
+## How to Deploy
 
 Currently FriendUP Docker requires you to use Docker-Compose, a easy way to deploy multible dependant applications at once, without the need to configure them all one by one.
 
@@ -12,10 +13,9 @@ Currently FriendUP Docker requires you to use Docker-Compose, a easy way to depl
 3. Navigate into the folder using a cli and type ``docker-compose up``
 4. After a few minutes FriendCore should be starting up and you should be able to reach Friend on port 6502
 
-You might want to use a reverse proxy redirecting the friend domain to the docker container. Here is a usefull guide how to do that with Apache: https://www.digitalocean.com/community/tutorials/how-to-use-apache-http-server-as-reverse-proxy-using-mod_proxy-extension
+You might want to use a reverse proxy redirecting the friend domain to the docker container. Here is a usefull guide how to do that with Apache: [https://www.digitalocean.com/community/tutorials/how-to-use-apache-http-server-as-reverse-proxy-using-mod_proxy-extension](https://www.digitalocean.com/community/tutorials/how-to-use-apache-http-server-as-reverse-proxy-using-mod_proxy-extension)
 
-
-# Enviroment Variables
+## Enviroment Variables
 
 **MYSQL_USER** - The Database username
 
@@ -27,17 +27,17 @@ You might want to use a reverse proxy redirecting the friend domain to the docke
 
 **DOCKER_FRIEND_DOMAIN** - the domain friend will run under
 
-# Updating FriendUP
+## Updating FriendUP
 
 To update friend go back to the place of the docker-compose.yml file using a cli and type ``docker-compose down`` this will stop and remove the containers ( Don't worry, your data is safe ). After you done that just type ``docker-compose up`` again and the container should be updated
 
-# Additional Info
+## Additional Info
 
-FriendUP: https://github.com/FriendUPCloud/friendup  
-Docker: https://www.docker.com/  
-Docker-Compose: https://docs.docker.com/compose/  
-DockerHub: https://hub.docker.com/r/aperturedevelopment/friendup  
+FriendUP: [https://github.com/FriendUPCloud/friendup](https://github.com/FriendUPCloud/friendup)  
+Docker: [https://www.docker.com/](https://www.docker.com/)
+Docker-Compose: [https://docs.docker.com/compose/](https://docs.docker.com/compose/)
+DockerHub: [https://hub.docker.com/r/aperturedevelopment/friendup](https://hub.docker.com/r/aperturedevelopment/friendup)
   
 This repository and the code is licenced under MIT.  
 
-The FriendUP-Docker container has been made by [Aperture Development](https://www.aperture-development.de/). We are in no way owning or claiming ownership over FriendUP and it's code. 
+The FriendUP-Docker container has been made by [Aperture Development](https://www.aperture-development.de/). We are in no way owning or claiming ownership over FriendUP and it's code.

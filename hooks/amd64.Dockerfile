@@ -20,7 +20,7 @@ ARG SRC_REPO
 ARG SRC_TAG
 
 # Pull ubuntu image
-FROM ${SRC_HUB}/${SRC_NAME}/${SRC_REPO}:${SRC_TAG} AS bundle
+FROM ${SRC_HUB}/amd64/${SRC_REPO}:${SRC_TAG} AS bundle
 
 # Disable interactive questions
 ENV DEBIAN_FRONTEND noninteractive
