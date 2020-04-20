@@ -35,8 +35,41 @@ COPY --from=qemu qemu-arm-static /usr/bin
 ENV DEBIAN_FRONTEND noninteractive
 
 # Install Requirements
-RUN apt-get update &&\
-    apt-get install -y git phpmyadmin mysql-client libsqlite3-dev libsmbclient-dev libssh2-1-dev libssh-dev libaio-dev build-essential libmatheval-dev libmagic-dev libgd-dev rsync valgrind-dbg libxml2-dev php-readline cmake ssh curl build-essential python php php-cli php-gd php-imap php-mysql php-curl php-readline default-libmysqlclient-dev libsqlite3-dev libsmbclient-dev libuv-dev
+RUN apt-get update \
+    && apt-get upgrade -y \
+    && apt-get install -y \
+        git \
+        phpmyadmin \
+        mysql-client \
+        libsqlite3-dev \
+        libsmbclient-dev \
+        libssh2-1-dev \
+        libssh-dev \
+        libaio-dev \
+        build-essential \
+        libmatheval-dev \
+        libmagic-dev \
+        libgd-dev \
+        rsync \
+        valgrind-dbg \
+        libxml2-dev \
+        php-readline \
+        cmake \
+        ssh \
+        curl \
+        python \
+        php \
+        php-cli \
+        php-gd \
+        php-imap \
+        php-mysql \
+        php-curl \
+        php-readline \
+        default-libmysqlclient-dev \
+        libsqlite3-dev \
+        libsmbclient-dev \
+        libuv-dev \
+    && rm -rf /var/lib/apt/lists/*
 
 # Check for Repository changes and invalidate the docker cache when there was one
 ADD https://api.github.com/repos/FriendUPCloud/friendup/git/refs/heads/master friendup_version.json
@@ -49,11 +82,11 @@ COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 # Link libaries for the build process and build friend
-RUN ln /usr/lib/arm-linux-gnueabihf/libcrypto.a /friendup/libs-ext/openssl/libcrypto.a &&\
-    ln /usr/lib/arm-linux-gnueabihf/libssl.a /friendup/libs-ext/openssl/libssl.a
-RUN cd /friendup &&\
-    make setup &&\
-    make compile install
+RUN ln /usr/lib/arm-linux-gnueabihf/libcrypto.a /friendup/libs-ext/openssl/libcrypto.a \
+    && ln /usr/lib/arm-linux-gnueabihf/libssl.a /friendup/libs-ext/openssl/libssl.a
+RUN cd /friendup \
+    && make setup \
+    && make compile install
 
 # Enable interactive questions again
 ENV DEBIAN_FRONTEND interactive

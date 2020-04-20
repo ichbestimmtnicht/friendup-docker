@@ -29,7 +29,7 @@ BUILD_FORCE_RM=true
 # true for no cache
 BUILD_NO_CACHE=false
 # Always pull images?
-BUILD_PULL=true
+BUILD_PULL=false
 # Do you want to see moore build information in your log?
 BUILD_QUIET=false
 # anything other then false will build up to that stage
@@ -56,7 +56,7 @@ DEST_HUB="index.docker.io"
 BUILD_ARGS=true # Set to false to disable build-arg's
 BUILD_ARG_SRC_HUB="index.docker.io"
 BUILD_ARG_SRC_REPO="ubuntu"
-BUILD_ARG_SRC_TAG="latest"
+BUILD_ARG_SRC_TAG="18.04"
 
 # LABEL_ only: Use a double underscore __ for an hyphen -
 # LABEL_
@@ -93,12 +93,6 @@ BUILD_CGROUPS=false # Set to "true" to enable cgroups
 # may change in the future
 # NOT TESTED
 BUILD_SQUASH=false
- 
-# current implementation doesn't make sense
-# DO NOT CHANGE
-# NOT TESTED
-BUILD_PLATFORM=false
-
 
 #--------------------------------------------------------------
 # Placeholder for upcoming features
@@ -116,3 +110,8 @@ DEST_OS="linux"
 # for windows builds
 # possible values=default process or hyperv
 BUILD_ISOLATION=false
+
+# current implementation doesn't make sense
+# DO NOT CHANGE
+# NOT TESTED
+BUILD_PLATFORM=false
